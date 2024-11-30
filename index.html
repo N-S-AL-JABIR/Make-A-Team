@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sports</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg px-5 container">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="#">Sports</a>
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i class="fa-solid fa-bars text-light"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-light"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Pricing</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="search-control">
+        <div class="search-container d-flex justify-content-center gap-3 p-5">
+          <input
+            class="searchBar rounded-3"
+            id="inputType"
+            type="text"
+            onkeydown="handleKeyDown(event)"
+            placeholder="Find Your Favorite Player..."
+          />
+          <button class="searchBtn rounded-3 border-0" onclick="search()">
+            Search
+          </button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="player-container col-md-9">
+            <h3 class="heading-text text-center w-100 rounded-3 mb-3 p-1">
+              Discover Players
+            </h3>
+            <div id="allPlayers" class="allPlayers"></div>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="modalTitle"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body" id="modalBody"></div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal -->
+          </div>
+          <div class="cart-container col-md-3 d-block">
+            <h3 class="heading-text text-center w-100 rounded-3 mb-3 p-1">
+              My Team
+            </h3>
+            <div class="team-card p-2">
+              <h5 class="text-center">
+                Total Member : <span id="memberCount">0</span>
+              </h5>
+              <ul id="myCart"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="my-footer bg-dark p-5 mt-5">
+      <div class="row">
+        <div class="col-md-5 text-light mb-4 px-4">
+          <h3 class="mb-2">Get In Touch</h3>
+          <p class="form-txt">
+            Welcome to a dynamic platform dedicated to showcasing the journey,
+            achievements, and aspirations of a passionate player. Explore
+            inspiring milestones, performance highlights, and exclusive
+            behind-the-scenes moments. Stay updated with the latest news, engage
+            through interactive features, and celebrate excellence. This website
+            is your gateway to passion, dedication, and the pursuit of
+            greatness.
+          </p>
+        </div>
+
+        <div class="col-md-5 text-light row mb-4">
+          <div class="col-6">
+            <h4 class="mb-4">About us</h4>
+            <p class="form-txt">Leadership</p>
+            <p class="form-txt">Careers</p>
+            <p class="form-txt">News & Article</p>
+            <p class="form-txt">Legal Notice</p>
+          </div>
+          <div class="col-6">
+            <h4 class="mb-4">Support</h4>
+            <p class="form-txt">Help center</p>
+            <p class="form-txt">FAQ</p>
+            <p class="form-txt">Ticket Support</p>
+            <p class="form-txt">Contact us</p>
+          </div>
+        </div>
+        <div class="col-md-2 text-light mb-4">
+          <h4 class="mb-4">Sports</h4>
+          <p class="form-txt">Football</p>
+          <p class="form-txt">WWE</p>
+          <p class="form-txt">F1</p>
+          <p class="form-txt">Soccer</p>
+          <p class="form-txt">ESports</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Script file cdn -->
+    <div>
+      <script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
